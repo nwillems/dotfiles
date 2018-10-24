@@ -1,0 +1,74 @@
+# config (for global configurations)
+
+config checkDefaultsOnLoad true
+config defaultToCurrentScreen true
+config orderScreensLeftToRight true
+
+config keyboardLayout "qwerty"
+
+config modalEscapeKey "esc"
+
+# Configuration for hints
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# alias (to create alias variables)
+# layout (to configure layouts)
+# default (to default certain screen configurations to layouts)
+#  -- this probably needs a change, when factoring in projectors etc
+default default-layout count:2
+
+# bind (for key bindings)
+## Layouting - Could possibly be "push direction bar-resize:screenSizeX/2"
+# bind left:cmd,ctrl  move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+# bind right:cmd,ctrl move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+bind left:cmd,ctrl push left bar-resize:screenSizeX/2
+bind right:cmd,ctrl push right bar-resize:screenSizeX/2
+bind up:cmd,ctrl    move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+## Move window to screen
+# bind 1:cmd move screenOriginX;screenOriginY screenSizeX;screenSizeY ordered:0
+# bind 2:cmd move screenOriginX;screenOriginY screenSizeX;screenSizeY ordered:1
+bind 1:cmd,ctrl throw 0 resize
+bind 2:cmd,ctrl throw 1 resize
+
+# bind g:cmd,ctrl grid padding:2 0:2,2 1:2,2
+
+## Focus bindings
+#bind right:cmd focus right
+#bind left:cmd  focus left
+#bind up:cmd    focus up
+#bind down:cmd  focus down
+#bind j:cmd focus above
+#bind k:cmd focus below
+
+bind esc:cmd hint
+
+bind r:cmd,ctrl relaunch
+
+# source (to load configs from another file)
+
+#
+# Some directives allow parameters that can be expressions. The following
+# strings will be replaced with the appropriate values when using expressions:
+#
+# screenOriginX = target screen's top left x coordinate (should not be used in Window Hints configs)
+# screenOriginY = target screen's top left y coordinate (should not be used in Window Hints configs)
+# screenSizeX = target screen's width
+# screenSizeY = target screen's height
+# windowTopLeftX = window's current top left x coordinate (should not be used in Window Hints configs)
+# windowTopLeftY = window's current top left y coordinate (should not be used in Window Hints configs)
+# windowSizeX = window's width
+# windowSizeY = window's height
+# newWindowSizeX = window's new width (after resize, only usable in topLeftX and topLeftY, should not be
+#                  used in configs)
+# newWindowSizeY = window's new height (after resize, only usable in topLeftX and topLeftY, should not be
+#                  used in configs)
+# windowHintsWidth = the value of the windowHintsWidth config (only usable in windowHintsTopLeftX and
+#                    windowHintsTopLeftY)
+# windowHintsHeight = the value of the windowHintsHeight config (only usable in windowHintsTopLeftX and
+#                     windowHintsTopLeftY)
+
+
+
