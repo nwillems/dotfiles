@@ -1,2 +1,58 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory extendedglob nomatch notify
+unsetopt autocd beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/nwillems/.zshrc'
 
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export PATH=$PATH:~/.gem/ruby/1.9.1/bin:~/.cabal/bin:~/scripts;
+export EDITOR=nvim
+# export TERM=rxvt-unicode
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export M2_HOME=/opt/maven
+
+alias cls='clear'
+alias ls='ls -hl --color=auto'
+alias l='ls -l --color=auto'
+alias browse='firefox'
+alias zbrowse='chromium --user-data-dir=/home/nwillems/zarah/chromium'
+alias anyupdates='pacman -Qu'
+#alias sysupgrade="touch /home/nwillems/pacmanlog/sys$(date +%y-%m-%d).log; sudo pacman -Syyu --logfile /home/nwillems/pacmanlog/sys$(date +%Y-%m-%d).log"
+alias lock='mpc pause; i3lock -c 000000'
+alias sl='sl -a'
+alias dir='ls'
+alias virtualbox="/home/nwillems/scripts/virtualbox.sh"
+alias vim='nvim'
+# alias packer="packer-color"
+export PROMPT_COMMAND=""
+export PS1='[\u@\h \W]\$ '
+
+export QT_STYLE_OVERRIDE=GTK+
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+stty -ixon
+
+# Possible only on darwin...
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

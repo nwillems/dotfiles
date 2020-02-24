@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/nwillems/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -93,9 +93,10 @@ source ~/.environment
 
 # Should probably go into some k8s-aliases
 alias k='kubectl'
+alias vim='nvim'
 
 source ~/.m2/.mvnrc
-source /usr/local/opt/autoenv/activate.sh
+# source /usr/local/opt/autoenv/activate.sh
 
-
+unset preexec_functions
 # while read h; do SSH_AUTH_SOCK=~/.ssh/agent.sock ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no nwi@$h sudo service consul restart &; done < smoke01.hosts
