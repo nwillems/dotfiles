@@ -1,7 +1,7 @@
 
-set tabstop=4       " Tab is eq 4 spaces
-set shiftwidth=4    " Spaces for autoIndent
-set softtabstop=4   " Something rable rable
+set tabstop=2       " Tab is eq 4 spaces
+set shiftwidth=2    " Spaces for autoIndent
+set softtabstop=2   " Something rable rable
 set expandtab       " Expands tab-key presses
 set autoindent      " Enable autoindent(keep indent)
 set number          " Show line numbers

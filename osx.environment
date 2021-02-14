@@ -1,0 +1,10 @@
+
+export PATH=$PATH:${HOME}/scripts;
+export EDITOR=nvim
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export M2_HOME=/opt/maven
+
+alias cls='clear'
+alias ls='ls -hl --color=auto'
+alias l='ls -l --color=auto'

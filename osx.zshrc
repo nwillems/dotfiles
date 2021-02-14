@@ -55,7 +55,10 @@ zmodload -i zsh/complist
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    poetry
+    git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,8 +98,18 @@ source ~/.environment
 alias k='kubectl'
 alias vim='nvim'
 
-source ~/.m2/.mvnrc
+# source ~/.m2/.mvnrc
 # source /usr/local/opt/autoenv/activate.sh
 
 unset preexec_functions
 # while read h; do SSH_AUTH_SOCK=~/.ssh/agent.sock ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no nwi@$h sudo service consul restart &; done < smoke01.hosts
+
+export PATH="$HOME/.poetry/bin:${HOME}/.local/bin:${PATH}:${HOME}/scripts"
+export EDITOR=nvim
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export M2_HOME=/opt/maven
+
+alias cls='clear'
+alias ls='ls -hl --color=auto'
+alias l='ls -l --color=auto'

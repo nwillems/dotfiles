@@ -20,7 +20,7 @@ compinit
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:~/.gem/ruby/1.9.1/bin:~/.cabal/bin:~/scripts;
+export PATH=$PATH:${HOME}/scripts;
 export EDITOR=nvim
 # export TERM=rxvt-unicode
 
@@ -54,5 +54,3 @@ fi
 
 stty -ixon
 
-# Possible only on darwin...
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
